@@ -70,5 +70,6 @@ With the workspace set up, configure the following environment variables in the 
 | `TFC_VAULT_PROVIDER_AUTH` | `true`                        |
 | `TFC_VAULT_ADDR`          | `https://your-hcp-public-url` |
 | `TFC_VAULT_RUN_ROLE`      | `tfc-role`                    |
+| `TFC_VAULT_NAMESPACE`     | `admin`                       |
 
 Make sure to replace `https://your-hcp-public-url` with the public URL of your HCP Vault instance.
