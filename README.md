@@ -1,20 +1,27 @@
-# vault-tfc-jwt-dynamic-example
-Testing out TFC dynamic creds with Vault JWT using this [guide](https://developer.hashicorp.com/terraform/cloud-docs/workspaces/dynamic-provider-credentials/vault-configuration)
+# Vault-TFC-JWT-Dynamic-Example
 
-## HCP Vault
-For this example I am going to use HCP vault.
+This example demonstrates how to test dynamic credentials with Terraform Cloud (TFC) and HashiCorp Vault using JWT authentication. We’ll follow the steps outlined in this [guide](https://developer.hashicorp.com/terraform/cloud-docs/workspaces/dynamic-provider-credentials/vault-configuration).
 
-1. Login to HCP
-2. Select Vault Dedicated
-3. Click + Create Cluster
-4. Select select "Start From Scratch"
-6. Once its started take note of the public url and token
+## HCP Vault Setup
 
-## Configure Vault
-This will work with both on premise Vault and HCP Vault
+For this example, we'll use HCP Vault.
+
+1. **Login to HCP**: Access your HashiCorp Cloud Platform account.
+2. **Create a Vault Cluster**:
+   - Navigate to the Vault section.
+   - Select **Vault Dedicated**.
+   - Click on **+ Create Cluster**.
+   - Choose **Start From Scratch** as your setup option.
+3. **Note Important Details**: Once the cluster is up and running, make a note of the public URL and the token. You'll need these later.
+
+## Vault Configuration
+
+These instructions apply to both HCP Vault and on-premise Vault setups.
 
 ### Access Vault
-Add your public URL
+
+First, set your environment variables to point to your Vault instance:
+
 ```bash
 export VAULT_ADDR='https://vault-cluster-public-vault-9a597d10.43dcd635.z1.hashicorp.cloud:8200'
 export VAULT_NAMESPACE='admin'
@@ -23,34 +30,45 @@ vault login
 
 ### Setup Vault
 
+Be sure to update the `bound_claims.sub` in `vault-jwt-auth-role.json` to match your TFC/TFE workspace or organization details.
+
 ```bash
+# Enable JWT authentication in Vault
 vault auth enable jwt
 
+# Configure JWT auth method with TFC as the OIDC provider
 vault write auth/jwt/config \
     oidc_discovery_url="https://app.terraform.io" \
     bound_issuer="https://app.terraform.io"
 
+# Write the Vault policy for TFC
 vault policy write tfc-policy tfc-policy.hcl
 
+# Create a JWT role in Vault for TFC
 vault write auth/jwt/role/tfc-role @vault-jwt-auth-role.json
 ```
 
-## Configure TFC
-Again we are using TFC here for ease however this also works on TFE 
-1. Login to TFC
-2. Select your Org
-3. Create a new workspace
-4. Select Version Control Workflow
-5. Select your VCS, github in my case
-6. Select the repo to point to
-7. Ensure you set Advanced options > Terraform Working Directory to `tf`
+## Terraform Cloud Configuration
 
-### Set the envrioment variables
-Now we have our worksapce setup lets set the envrioment variables, select the workspace variables and add the following **envrioment** variables:
+For this example, we are using TFC for simplicity, but these steps also apply to Terraform Enterprise (TFE).
 
-|Name|Value|
-|---|---|
-|TFC_VAULT_PROVIDER_AUTH|true|
-|TFC_VAULT_ADDR|`hcp-public-url`|
-|TFC_VAULT_RUN_ROLE|tfc-role|
+1. **Login to TFC**: Access your Terraform Cloud account.
+2. **Select Your Organization**: Choose the organization where you want to create the workspace.
+3. **Create a New Workspace**:
+   - Select **New Workspace**.
+   - Choose the **Version Control Workflow**.
+   - Select your VCS provider (e.g., GitHub).
+   - Choose the repository you want to use.
+   - Under **Advanced Options**, set the **Terraform Working Directory** to `tf`.
 
+### Set the Environment Variables
+
+With the workspace set up, configure the following environment variables in the workspace settings:
+
+| Name                      | Value                         |
+|---------------------------|-------------------------------|
+| `TFC_VAULT_PROVIDER_AUTH` | `true`                        |
+| `TFC_VAULT_ADDR`          | `https://your-hcp-public-url` |
+| `TFC_VAULT_RUN_ROLE`      | `tfc-role`                    |
+
+Make sure to replace `https://your-hcp-public-url` with the public URL of your HCP Vault instance.
