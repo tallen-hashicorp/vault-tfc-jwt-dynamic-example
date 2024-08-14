@@ -45,3 +45,12 @@ Again we are using TFC here for ease however this also works on TFE
 6. Select the repo to point to
 7. Ensure you set Advanced options > Terraform Working Directory to `tf`
 
+### Set the envrioment variables
+Now we have our worksapce setup lets set the envrioment variables, select the workspace variables and add the following **envrioment** variables:
+
+|Name|Value|
+|---|---|
+|TFC_VAULT_PROVIDER_AUTH|true|
+|TFC_VAULT_ADDR|`hcp-public-url`|
+|TFC_VAULT_RUN_ROLE|tfc-role|
+
