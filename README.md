@@ -73,3 +73,5 @@ With the workspace set up, configure the following environment variables in the 
 | `TFC_VAULT_NAMESPACE`     | `admin`                       |
 
 Make sure to replace `https://your-hcp-public-url` with the public URL of your HCP Vault instance.
+
+This setup allows you to integrate TFC with Vault dynamically using JWT authentication, without needing to create a separate JWT role for each TFC workspace. The environment variables and policies should help manage access in a scalable manner.
