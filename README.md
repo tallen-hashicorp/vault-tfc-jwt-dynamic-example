@@ -1,10 +1,10 @@
 # Vault-TFC-JWT-Dynamic-Example
 
-This example demonstrates how to test dynamic credentials with Terraform Cloud (TFC) and HashiCorp Vault using JWT authentication. We’ll follow the steps outlined in this [guide](https://developer.hashicorp.com/terraform/cloud-docs/workspaces/dynamic-provider-credentials/vault-configuration). We create a policy in Vault allowing TF access to secret/*. Next we create a kv secret called secret/s3 with the value name=tylers-bucket, we will create bucket with by getting this secret. 
+This example demonstrates how to test dynamic credentials with Terraform Cloud (TFC) and HashiCorp Vault using JWT authentication. We will follow the steps outlined in this [guide](https://developer.hashicorp.com/terraform/cloud-docs/workspaces/dynamic-provider-credentials/vault-configuration). The process includes creating a policy in Vault that allows Terraform access to secrets (`secret/*`), and then creating a key-value (KV) secret called `secret/s3` with the value `name=tylers-bucket`. This secret will be used to create an S3 bucket.
 
 ## HCP Vault Setup
 
-For this example, we'll use HCP Vault.
+For this example, we'll use HashiCorp Cloud Platform (HCP) Vault.
 
 1. **Login to HCP**: Access your HashiCorp Cloud Platform account.
 2. **Create a Vault Cluster**:
@@ -12,7 +12,7 @@ For this example, we'll use HCP Vault.
    - Select **Vault Dedicated**.
    - Click on **+ Create Cluster**.
    - Choose **Start From Scratch** as your setup option.
-3. **Note Important Details**: Once the cluster is up and running, make a note of the public URL and the token. You'll need these later.
+3. **Note Important Details**: Once the cluster is up and running, note the public URL and the token. You'll need these later.
 
 ## Vault Configuration
 
@@ -30,31 +30,39 @@ vault login
 
 ### Setup Vault
 
-Be sure to update the `bound_claims.sub` in `vault-jwt-auth-role.json` to match your TFC/TFE workspace or organization details.
+Update the `bound_claims.sub` in `vault-jwt-auth-role.json` to match your TFC/TFE workspace or organization details.
 
-```bash
-# Enable JWT authentication in Vault
-vault auth enable jwt
+1. **Enable JWT Authentication in Vault**:
+   ```bash
+   vault auth enable jwt
+   ```
 
-# Configure JWT auth method with TFC as the OIDC provider
-vault write auth/jwt/config \
-    oidc_discovery_url="https://app.terraform.io" \
-    bound_issuer="https://app.terraform.io"
+2. **Configure JWT Auth Method with TFC as the OIDC Provider**:
+   ```bash
+   vault write auth/jwt/config \
+       oidc_discovery_url="https://app.terraform.io" \
+       bound_issuer="https://app.terraform.io"
+   ```
 
-# Write the Vault policy for TFC
-vault policy write tfc-policy tfc-policy.hcl
+3. **Write the Vault Policy for TFC**:
+   ```bash
+   vault policy write tfc-policy tfc-policy.hcl
+   ```
 
-# Create a JWT role in Vault for TFC
-vault write auth/jwt/role/tfc-role @vault-jwt-auth-role.json
+4. **Create a JWT Role in Vault for TFC**:
+   ```bash
+   vault write auth/jwt/role/tfc-role @vault-jwt-auth-role.json
+   ```
 
-# Create a KV secret to use later
-vault secrets enable -path=secret -version=2 kv
-vault kv put -mount=secret s3 name=tylers-bucket region=us-west-2
-```
+5. **Create a KV Secret for Later Use**:
+   ```bash
+   vault secrets enable -path=secret -version=2 kv
+   vault kv put -mount=secret s3 name=tylers-bucket region=us-west-2
+   ```
 
 ## Terraform Cloud Configuration
 
-For this example, we are using TFC for simplicity, but these steps also apply to Terraform Enterprise (TFE).
+For this example, we are using Terraform Cloud (TFC) for simplicity, but these steps also apply to Terraform Enterprise (TFE).
 
 1. **Login to TFC**: Access your Terraform Cloud account.
 2. **Select Your Organization**: Choose the organization where you want to create the workspace.
@@ -78,4 +86,6 @@ With the workspace set up, configure the following environment variables in the 
 
 Make sure to replace `https://your-hcp-public-url` with the public URL of your HCP Vault instance.
 
-This setup allows you to integrate TFC with Vault dynamically using JWT authentication, without needing to create a separate JWT role for each TFC workspace. The environment variables and policies should help manage access in a scalable manner.
+## Conclusion
+
+This setup allows you to integrate Terraform Cloud with Vault dynamically using JWT authentication, without needing to create a separate JWT role for each TFC workspace. By using environment variables and policies, you can manage access in a scalable and efficient manner.
