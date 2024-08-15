@@ -40,6 +40,10 @@ variable "tfc_vault_dynamic_credentials" {
   })
 }
 
+provider "aws" {
+  region = "us-west-2"
+}
+
 resource "random_string" "s3_bucket_name_prefix" {
   length  = 8
   special = false
@@ -58,4 +62,8 @@ resource "aws_s3_bucket" "example" {
 output "tfc_vault_dynamic_credentials" {
   description = "Object containing Vault dynamic credentials configuration"
   value       = var.tfc_vault_dynamic_credentials
+}
+
+output "bucket_name" {
+  value = aws_s3_bucket.bucket.bucket
 }
