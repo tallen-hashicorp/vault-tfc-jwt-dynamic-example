@@ -6,8 +6,14 @@
       "sub":
   "organization:Tallen:project:*:workspace:*:run_phase:*"
     },
-    "user_claim": "terraform_full_workspace",
+    "user_claim": "terraform_workspace_name",
     "role_type": "jwt",
-    "token_ttl": "20m"
+    "token_ttl": "20m",
+    "claim_mappings": {
+      "terraform_run_phase": "run_phase",
+      "terraform_workspace_name": "workspace_name",
+      "terraform_project_name": "project_name",
+      "terraform_organization_name": "organization_name"
+    }
   }
   

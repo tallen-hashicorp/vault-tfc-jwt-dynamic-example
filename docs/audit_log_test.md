@@ -49,3 +49,27 @@ vault audit enable file file_path=vault_audit.log
 * Logs in with `auth/jwt/login` 
 * Hits `auth/token/renew-self` 
 * Hits `auth/token/lookup-self`
+
+## JWT Testing
+I wanted to see what was in the JWT, to do this I ran `sudo tcpdump -A -s 0 'tcp port 80'` on the box, this let me see the whole JWT that TFC used, here is the payload
+
+```json
+{
+    "terraform_run_phase": "plan",
+    "terraform_workspace_id": "",
+    "terraform_workspace_name": "",
+    "terraform_organization_id": "",
+    "terraform_organization_name": "",
+    "terraform_run_id": "",
+    "terraform_full_workspace": "organization:***:project:***:workspace:***",
+    "terraform_project_id": "",
+    "terraform_project_name": "",
+    "jti": "",
+    "iss": "",
+    "aud": "",
+    "iat": *,
+    "nbf": *,
+    "exp": *,
+    "sub": "organization:*:project:*:workspace:*:run_phase:plan"
+  }
+```
