@@ -63,7 +63,3 @@ output "tfc_vault_dynamic_credentials" {
   description = "Object containing Vault dynamic credentials configuration"
   value       = var.tfc_vault_dynamic_credentials
 }
-
-output "bucket_name" {
-  value = aws_s3_bucket.example.bucket
-}
