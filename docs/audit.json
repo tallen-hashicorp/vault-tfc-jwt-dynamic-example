@@ -1,0 +1,830 @@
+{
+  "auth": {
+    "policy_results": {
+      "allowed": true
+    },
+    "token_type": "default"
+  },
+  "request": {
+    "data": {
+      "jwt": "****",
+      "role": "****"
+    },
+    "id": "****",
+    "mount_accessor": "auth_jwt_ecc6d73c",
+    "mount_class": "auth",
+    "mount_point": "auth/jwt/",
+    "mount_running_version": "v0.21.1+builtin",
+    "mount_type": "jwt",
+    "namespace": {
+      "id": "root"
+    },
+    "operation": "update",
+    "path": "auth/jwt/login",
+    "remote_address": "3.93.200.217",
+    "remote_port": 58070
+  },
+  "time": "2024-08-15T13:15:03.448238519Z",
+  "type": "request"
+}
+{
+  "auth": {
+    "accessor": "****",
+    "client_token": "****",
+    "display_name": "jwt-organization:***:project:***:workspace:****",
+    "entity_created": true,
+    "entity_id": "c67ec5d4-310a-ec11-cac8-cdeff0fd9878",
+    "metadata": {
+      "role": "tfc-role"
+    },
+    "policies": [
+      "default",
+      "tfc-policy"
+    ],
+    "token_policies": [
+      "default",
+      "tfc-policy"
+    ],
+    "token_ttl": 1200,
+    "token_type": "service"
+  },
+  "request": {
+    "data": {
+      "jwt": "****",
+      "role": "****"
+    },
+    "id": "****",
+    "mount_accessor": "auth_jwt_ecc6d73c",
+    "mount_class": "auth",
+    "mount_point": "auth/jwt/",
+    "mount_running_version": "v0.21.1+builtin",
+    "mount_type": "jwt",
+    "namespace": {
+      "id": "root"
+    },
+    "operation": "update",
+    "path": "auth/jwt/login",
+    "remote_address": "3.93.200.217",
+    "remote_port": 58070
+  },
+  "response": {
+    "auth": {
+      "accessor": "ZH2nqFsrp7DgfafSzgLu5YGz",
+      "client_token": "****",
+      "display_name": "jwt-organization:***:project:***:workspace:****",
+      "entity_created": true,
+      "entity_id": "c67ec5d4-310a-ec11-cac8-cdeff0fd9878",
+      "metadata": {
+        "role": "tfc-role"
+      },
+      "policies": [
+        "default",
+        "tfc-policy"
+      ],
+      "token_policies": [
+        "default",
+        "tfc-policy"
+      ],
+      "token_ttl": 1200,
+      "token_type": "service"
+    },
+    "mount_accessor": "auth_jwt_ecc6d73c",
+    "mount_class": "auth",
+    "mount_point": "auth/jwt/",
+    "mount_running_plugin_version": "v0.21.1+builtin",
+    "mount_type": "jwt"
+  },
+  "time": "2024-08-15T13:15:03.516989693Z",
+  "type": "response"
+}
+{
+  "auth": {
+    "accessor": "****",
+    "client_token": "****",
+    "display_name": "jwt-organization:***:project:***:workspace:****",
+    "entity_id": "c67ec5d4-310a-ec11-cac8-cdeff0fd9878",
+    "metadata": {
+      "role": "tfc-role"
+    },
+    "policies": [
+      "default",
+      "tfc-policy"
+    ],
+    "policy_results": {
+      "allowed": true,
+      "granting_policies": [
+        {
+          "type": ""
+        },
+        {
+          "type": ""
+        },
+        {
+          "name": "default",
+          "namespace_id": "root",
+          "type": "acl"
+        },
+        {
+          "name": "tfc-policy",
+          "namespace_id": "root",
+          "type": "acl"
+        }
+      ]
+    },
+    "token_policies": [
+      "default",
+      "tfc-policy"
+    ],
+    "token_issue_time": "2024-08-15T13:15:03Z",
+    "token_ttl": 1200,
+    "token_type": "service"
+  },
+  "request": {
+    "client_id": "c67ec5d4-310a-ec11-cac8-cdeff0fd9878",
+    "client_token": "****",
+    "client_token_accessor": "****",
+    "data": {
+      "increment": "****"
+    },
+    "id": "4baf0e12-6d95-49a7-af03-ccfddee5fe87",
+    "mount_accessor": "auth_token_5be3eba0",
+    "mount_class": "auth",
+    "mount_point": "auth/token/",
+    "mount_running_version": "v1.17.3+builtin.vault",
+    "mount_type": "token",
+    "namespace": {
+      "id": "root"
+    },
+    "operation": "update",
+    "path": "auth/token/renew-self",
+    "remote_address": "3.93.200.217",
+    "remote_port": 58070
+  },
+  "time": "2024-08-15T13:15:03.519895557Z",
+  "type": "request"
+}
+{
+  "auth": {
+    "accessor": "****",
+    "client_token": "****",
+    "display_name": "jwt-organization:***:project:***:workspace:****",
+    "entity_id": "c67ec5d4-310a-ec11-cac8-cdeff0fd9878",
+    "metadata": {
+      "role": "tfc-role"
+    },
+    "policies": [
+      "default",
+      "tfc-policy"
+    ],
+    "policy_results": {
+      "allowed": true,
+      "granting_policies": [
+        {
+          "type": ""
+        },
+        {
+          "type": ""
+        },
+        {
+          "name": "default",
+          "namespace_id": "root",
+          "type": "acl"
+        },
+        {
+          "name": "tfc-policy",
+          "namespace_id": "root",
+          "type": "acl"
+        }
+      ]
+    },
+    "token_policies": [
+      "default",
+      "tfc-policy"
+    ],
+    "token_issue_time": "2024-08-15T13:15:03Z",
+    "token_ttl": 1200,
+    "token_type": "service"
+  },
+  "request": {
+    "client_id": "c67ec5d4-310a-ec11-cac8-cdeff0fd9878",
+    "client_token": "****",
+    "client_token_accessor": "****",
+    "data": {
+      "increment": "****"
+    },
+    "id": "4baf0e12-6d95-49a7-af03-ccfddee5fe87",
+    "mount_accessor": "auth_token_5be3eba0",
+    "mount_class": "auth",
+    "mount_point": "auth/token/",
+    "mount_running_version": "v1.17.3+builtin.vault",
+    "mount_type": "token",
+    "namespace": {
+      "id": "root"
+    },
+    "operation": "update",
+    "path": "auth/token/renew-self",
+    "remote_address": "3.93.200.217",
+    "remote_port": 58070
+  },
+  "response": {
+    "auth": {
+      "accessor": "ZH2nqFsrp7DgfafSzgLu5YGz",
+      "client_token": "****",
+      "display_name": "jwt-organization:***:project:***:workspace:****",
+      "entity_created": true,
+      "entity_id": "c67ec5d4-310a-ec11-cac8-cdeff0fd9878",
+      "metadata": {
+        "role": "tfc-role"
+      },
+      "policies": [
+        "default",
+        "tfc-policy"
+      ],
+      "token_policies": [
+        "default",
+        "tfc-policy"
+      ],
+      "token_issue_time": "2024-08-15T13:15:03Z",
+      "token_ttl": 1200,
+      "token_type": "service"
+    },
+    "mount_accessor": "auth_token_5be3eba0",
+    "mount_class": "auth",
+    "mount_point": "auth/token/",
+    "mount_running_plugin_version": "v1.17.3+builtin.vault",
+    "mount_type": "token"
+  },
+  "time": "2024-08-15T13:15:03.529206348Z",
+  "type": "response"
+}
+{
+  "auth": {
+    "accessor": "****",
+    "client_token": "****",
+    "display_name": "jwt-organization:***:project:***:workspace:****",
+    "entity_id": "c67ec5d4-310a-ec11-cac8-cdeff0fd9878",
+    "metadata": {
+      "role": "tfc-role"
+    },
+    "policies": [
+      "default",
+      "tfc-policy"
+    ],
+    "policy_results": {
+      "allowed": true,
+      "granting_policies": [
+        {
+          "type": ""
+        },
+        {
+          "type": ""
+        },
+        {
+          "name": "default",
+          "namespace_id": "root",
+          "type": "acl"
+        },
+        {
+          "name": "tfc-policy",
+          "namespace_id": "root",
+          "type": "acl"
+        }
+      ]
+    },
+    "token_policies": [
+      "default",
+      "tfc-policy"
+    ],
+    "token_issue_time": "2024-08-15T13:15:03Z",
+    "token_ttl": 1200,
+    "token_type": "service"
+  },
+  "request": {
+    "client_id": "c67ec5d4-310a-ec11-cac8-cdeff0fd9878",
+    "client_token": "****",
+    "client_token_accessor": "****",
+    "id": "01c559cd-a545-8837-766a-ecce3e28343c",
+    "mount_class": "auth",
+    "mount_point": "auth/token/",
+    "mount_running_version": "v1.17.3+builtin.vault",
+    "mount_type": "token",
+    "namespace": {
+      "id": "root"
+    },
+    "operation": "read",
+    "path": "auth/token/lookup-self",
+    "remote_address": "3.93.200.217",
+    "remote_port": 58090
+  },
+  "time": "2024-08-15T13:15:15.130485839Z",
+  "type": "request"
+}
+{
+  "auth": {
+    "accessor": "****",
+    "client_token": "****",
+    "display_name": "jwt-organization:***:project:***:workspace:****",
+    "entity_id": "c67ec5d4-310a-ec11-cac8-cdeff0fd9878",
+    "metadata": {
+      "role": "tfc-role"
+    },
+    "policies": [
+      "default",
+      "tfc-policy"
+    ],
+    "policy_results": {
+      "allowed": true,
+      "granting_policies": [
+        {
+          "type": ""
+        },
+        {
+          "type": ""
+        },
+        {
+          "name": "default",
+          "namespace_id": "root",
+          "type": "acl"
+        },
+        {
+          "name": "tfc-policy",
+          "namespace_id": "root",
+          "type": "acl"
+        }
+      ]
+    },
+    "token_policies": [
+      "default",
+      "tfc-policy"
+    ],
+    "token_issue_time": "2024-08-15T13:15:03Z",
+    "token_ttl": 1200,
+    "token_type": "service"
+  },
+  "request": {
+    "client_id": "c67ec5d4-310a-ec11-cac8-cdeff0fd9878",
+    "client_token": "****",
+    "client_token_accessor": "****",
+    "id": "01c559cd-a545-8837-766a-ecce3e28343c",
+    "mount_accessor": "auth_token_5be3eba0",
+    "mount_class": "auth",
+    "mount_point": "auth/token/",
+    "mount_running_version": "v1.17.3+builtin.vault",
+    "mount_type": "token",
+    "namespace": {
+      "id": "root"
+    },
+    "operation": "read",
+    "path": "auth/token/lookup-self",
+    "remote_address": "3.93.200.217",
+    "remote_port": 58090
+  },
+  "response": {
+    "data": {
+      "accessor": "****",
+      "creation_time": 1723727703,
+      "creation_ttl": 1200,
+      "display_name": "****",
+      "entity_id": "****",
+      "expire_time": "2024-08-15T13:35:03.524919596Z",
+      "explicit_max_ttl": 0,
+      "id": "****",
+      "issue_time": "2024-08-15T13:15:03.509305281Z",
+      "last_renewal": "2024-08-15T13:15:03.524920549Z",
+      "last_renewal_time": 1723727703,
+      "meta": {
+        "role": "****"
+      },
+      "num_uses": 0,
+      "orphan": true,
+      "path": "****",
+      "policies": [
+        "****",
+        "****"
+      ],
+      "renewable": true,
+      "ttl": 1188,
+      "type": "****"
+    },
+    "mount_accessor": "auth_token_5be3eba0",
+    "mount_class": "auth",
+    "mount_point": "auth/token/",
+    "mount_running_plugin_version": "v1.17.3+builtin.vault",
+    "mount_type": "token"
+  },
+  "time": "2024-08-15T13:15:15.130785285Z",
+  "type": "response"
+}
+{
+  "auth": {
+    "accessor": "****",
+    "client_token": "****",
+    "display_name": "jwt-organization:***:project:***:workspace:****",
+    "entity_id": "c67ec5d4-310a-ec11-cac8-cdeff0fd9878",
+    "metadata": {
+      "role": "tfc-role"
+    },
+    "policies": [
+      "default",
+      "tfc-policy"
+    ],
+    "policy_results": {
+      "allowed": true,
+      "granting_policies": [
+        {
+          "type": ""
+        },
+        {
+          "type": ""
+        },
+        {
+          "name": "default",
+          "namespace_id": "root",
+          "type": "acl"
+        },
+        {
+          "name": "tfc-policy",
+          "namespace_id": "root",
+          "type": "acl"
+        }
+      ]
+    },
+    "token_policies": [
+      "default",
+      "tfc-policy"
+    ],
+    "token_issue_time": "2024-08-15T13:15:03Z",
+    "token_ttl": 1200,
+    "token_type": "service"
+  },
+  "request": {
+    "client_id": "c67ec5d4-310a-ec11-cac8-cdeff0fd9878",
+    "client_token": "****",
+    "client_token_accessor": "****",
+    "id": "a67ecf0d-19c0-56e2-5037-4ad9074a1b81",
+    "mount_class": "auth",
+    "mount_point": "auth/token/",
+    "mount_running_version": "v1.17.3+builtin.vault",
+    "mount_type": "token",
+    "namespace": {
+      "id": "root"
+    },
+    "operation": "read",
+    "path": "auth/token/lookup-self",
+    "remote_address": "3.93.200.217",
+    "remote_port": 58090
+  },
+  "time": "2024-08-15T13:15:15.132892676Z",
+  "type": "request"
+}
+{
+  "auth": {
+    "accessor": "****",
+    "client_token": "****",
+    "display_name": "jwt-organization:***:project:***:workspace:****",
+    "entity_id": "c67ec5d4-310a-ec11-cac8-cdeff0fd9878",
+    "metadata": {
+      "role": "tfc-role"
+    },
+    "policies": [
+      "default",
+      "tfc-policy"
+    ],
+    "policy_results": {
+      "allowed": true,
+      "granting_policies": [
+        {
+          "type": ""
+        },
+        {
+          "type": ""
+        },
+        {
+          "name": "default",
+          "namespace_id": "root",
+          "type": "acl"
+        },
+        {
+          "name": "tfc-policy",
+          "namespace_id": "root",
+          "type": "acl"
+        }
+      ]
+    },
+    "token_policies": [
+      "default",
+      "tfc-policy"
+    ],
+    "token_issue_time": "2024-08-15T13:15:03Z",
+    "token_ttl": 1200,
+    "token_type": "service"
+  },
+  "request": {
+    "client_id": "c67ec5d4-310a-ec11-cac8-cdeff0fd9878",
+    "client_token": "****",
+    "client_token_accessor": "****",
+    "id": "a67ecf0d-19c0-56e2-5037-4ad9074a1b81",
+    "mount_accessor": "auth_token_5be3eba0",
+    "mount_class": "auth",
+    "mount_point": "auth/token/",
+    "mount_running_version": "v1.17.3+builtin.vault",
+    "mount_type": "token",
+    "namespace": {
+      "id": "root"
+    },
+    "operation": "read",
+    "path": "auth/token/lookup-self",
+    "remote_address": "3.93.200.217",
+    "remote_port": 58090
+  },
+  "response": {
+    "data": {
+      "accessor": "****",
+      "creation_time": 1723727703,
+      "creation_ttl": 1200,
+      "display_name": "****",
+      "entity_id": "****",
+      "expire_time": "2024-08-15T13:35:03.524919596Z",
+      "explicit_max_ttl": 0,
+      "id": "****",
+      "issue_time": "2024-08-15T13:15:03.509305281Z",
+      "last_renewal": "2024-08-15T13:15:03.524920549Z",
+      "last_renewal_time": 1723727703,
+      "meta": {
+        "role": "****"
+      },
+      "num_uses": 0,
+      "orphan": true,
+      "path": "****",
+      "policies": [
+        "****",
+        "****"
+      ],
+      "renewable": true,
+      "ttl": 1188,
+      "type": "****"
+    },
+    "mount_accessor": "auth_token_5be3eba0",
+    "mount_class": "auth",
+    "mount_point": "auth/token/",
+    "mount_running_plugin_version": "v1.17.3+builtin.vault",
+    "mount_type": "token"
+  },
+  "time": "2024-08-15T13:15:15.133143836Z",
+  "type": "response"
+}
+{
+  "auth": {
+    "accessor": "****",
+    "client_token": "****",
+    "display_name": "jwt-organization:***:project:***:workspace:****",
+    "entity_id": "c67ec5d4-310a-ec11-cac8-cdeff0fd9878",
+    "metadata": {
+      "role": "tfc-role"
+    },
+    "policies": [
+      "default",
+      "tfc-policy"
+    ],
+    "policy_results": {
+      "allowed": true,
+      "granting_policies": [
+        {
+          "type": ""
+        },
+        {
+          "name": "tfc-policy",
+          "namespace_id": "root",
+          "type": "acl"
+        }
+      ]
+    },
+    "token_policies": [
+      "default",
+      "tfc-policy"
+    ],
+    "token_issue_time": "2024-08-15T13:15:03Z",
+    "token_ttl": 1200,
+    "token_type": "service"
+  },
+  "request": {
+    "client_id": "c67ec5d4-310a-ec11-cac8-cdeff0fd9878",
+    "client_token": "****",
+    "client_token_accessor": "****",
+    "id": "7298b02c-cc59-046c-2dd9-fbc29ac4adc4",
+    "mount_class": "secret",
+    "mount_point": "secret/",
+    "mount_running_version": "v0.19.0+builtin",
+    "mount_type": "kv",
+    "namespace": {
+      "id": "root"
+    },
+    "operation": "read",
+    "path": "secret/data/s3",
+    "remote_address": "3.93.200.217",
+    "remote_port": 58090
+  },
+  "time": "2024-08-15T13:15:15.135181832Z",
+  "type": "request"
+}
+{
+  "auth": {
+    "accessor": "****",
+    "client_token": "****",
+    "display_name": "jwt-organization:***:project:***:workspace:****",
+    "entity_id": "c67ec5d4-310a-ec11-cac8-cdeff0fd9878",
+    "metadata": {
+      "role": "tfc-role"
+    },
+    "policies": [
+      "default",
+      "tfc-policy"
+    ],
+    "policy_results": {
+      "allowed": true,
+      "granting_policies": [
+        {
+          "type": ""
+        },
+        {
+          "name": "tfc-policy",
+          "namespace_id": "root",
+          "type": "acl"
+        }
+      ]
+    },
+    "token_policies": [
+      "default",
+      "tfc-policy"
+    ],
+    "token_issue_time": "2024-08-15T13:15:03Z",
+    "token_ttl": 1200,
+    "token_type": "service"
+  },
+  "request": {
+    "client_id": "c67ec5d4-310a-ec11-cac8-cdeff0fd9878",
+    "client_token": "****",
+    "client_token_accessor": "****",
+    "id": "7298b02c-cc59-046c-2dd9-fbc29ac4adc4",
+    "mount_accessor": "kv_b15426f7",
+    "mount_class": "secret",
+    "mount_point": "secret/",
+    "mount_running_version": "v0.19.0+builtin",
+    "mount_type": "kv",
+    "namespace": {
+      "id": "root"
+    },
+    "operation": "read",
+    "path": "secret/data/s3",
+    "remote_address": "3.93.200.217",
+    "remote_port": 58090
+  },
+  "response": {
+    "data": {
+      "data": {
+        "name": "****",
+        "region": "****"
+      },
+      "metadata": {
+        "created_time": "****",
+        "custom_metadata": null,
+        "deletion_time": "****",
+        "destroyed": false,
+        "version": 1
+      }
+    },
+    "mount_accessor": "kv_b15426f7",
+    "mount_class": "secret",
+    "mount_point": "secret/",
+    "mount_running_plugin_version": "v0.19.0+builtin",
+    "mount_type": "kv"
+  },
+  "time": "2024-08-15T13:15:15.135505487Z",
+  "type": "response"
+}
+{
+  "auth": {
+    "accessor": "****",
+    "client_token": "****",
+    "display_name": "jwt-organization:***:project:***:workspace:****",
+    "entity_id": "c67ec5d4-310a-ec11-cac8-cdeff0fd9878",
+    "metadata": {
+      "role": "tfc-role"
+    },
+    "policies": [
+      "default",
+      "tfc-policy"
+    ],
+    "policy_results": {
+      "allowed": true,
+      "granting_policies": [
+        {
+          "type": ""
+        },
+        {
+          "type": ""
+        },
+        {
+          "name": "default",
+          "namespace_id": "root",
+          "type": "acl"
+        },
+        {
+          "name": "tfc-policy",
+          "namespace_id": "root",
+          "type": "acl"
+        }
+      ]
+    },
+    "token_policies": [
+      "default",
+      "tfc-policy"
+    ],
+    "token_issue_time": "2024-08-15T13:15:03Z",
+    "token_ttl": 1200,
+    "token_type": "service"
+  },
+  "request": {
+    "client_id": "c67ec5d4-310a-ec11-cac8-cdeff0fd9878",
+    "client_token": "****",
+    "client_token_accessor": "****",
+    "id": "f740af83-3ebe-2146-f7c9-d0421bdd5482",
+    "mount_accessor": "auth_token_5be3eba0",
+    "mount_class": "auth",
+    "mount_point": "auth/token/",
+    "mount_running_version": "v1.17.3+builtin.vault",
+    "mount_type": "token",
+    "namespace": {
+      "id": "root"
+    },
+    "operation": "update",
+    "path": "auth/token/revoke-self",
+    "remote_address": "3.93.200.217",
+    "remote_port": 58070
+  },
+  "time": "2024-08-15T13:15:25.443163448Z",
+  "type": "request"
+}
+{
+  "auth": {
+    "accessor": "****",
+    "client_token": "****",
+    "display_name": "jwt-organization:***:project:***:workspace:****",
+    "entity_id": "c67ec5d4-310a-ec11-cac8-cdeff0fd9878",
+    "metadata": {
+      "role": "tfc-role"
+    },
+    "policies": [
+      "default",
+      "tfc-policy"
+    ],
+    "policy_results": {
+      "allowed": true,
+      "granting_policies": [
+        {
+          "type": ""
+        },
+        {
+          "type": ""
+        },
+        {
+          "name": "default",
+          "namespace_id": "root",
+          "type": "acl"
+        },
+        {
+          "name": "tfc-policy",
+          "namespace_id": "root",
+          "type": "acl"
+        }
+      ]
+    },
+    "token_policies": [
+      "default",
+      "tfc-policy"
+    ],
+    "token_issue_time": "2024-08-15T13:15:03Z",
+    "token_ttl": 1200,
+    "token_type": "service"
+  },
+  "request": {
+    "client_id": "c67ec5d4-310a-ec11-cac8-cdeff0fd9878",
+    "client_token": "****",
+    "client_token_accessor": "****",
+    "id": "f740af83-3ebe-2146-f7c9-d0421bdd5482",
+    "mount_accessor": "auth_token_5be3eba0",
+    "mount_class": "auth",
+    "mount_point": "auth/token/",
+    "mount_running_version": "v1.17.3+builtin.vault",
+    "mount_type": "token",
+    "namespace": {
+      "id": "root"
+    },
+    "operation": "update",
+    "path": "auth/token/revoke-self",
+    "remote_address": "3.93.200.217",
+    "remote_port": 58070
+  },
+  "time": "2024-08-15T13:15:25.483841497Z",
+  "type": "response"
+}

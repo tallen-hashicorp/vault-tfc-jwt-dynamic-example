@@ -86,6 +86,3 @@ With the workspace set up, configure the following environment variables in the 
 
 Make sure to replace `https://your-hcp-public-url` with the public URL of your HCP Vault instance.
 
-## Conclusion
-
-This setup allows you to integrate Terraform Cloud with Vault dynamically using JWT authentication, without needing to create a separate JWT role for each TFC workspace. By using environment variables and policies, you can manage access in a scalable and efficient manner.

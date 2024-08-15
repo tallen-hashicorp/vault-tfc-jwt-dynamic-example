@@ -3,7 +3,7 @@ provider "vault" {
   skip_child_token = true
   address          = var.tfc_vault_dynamic_credentials.default.address
   namespace        = var.tfc_vault_dynamic_credentials.default.namespace
-  
+  # We use the token here that TFC/TFE got  
 
   auth_login_token_file {
     filename = var.tfc_vault_dynamic_credentials.default.token_filename
@@ -23,6 +23,7 @@ provider "vault" {
 }
 
 
+# TFC Sets this after it logs in via JWT ODIC and gets a token
 variable "tfc_vault_dynamic_credentials" {
   description = "Object containing Vault dynamic credentials configuration"
   type = object({
