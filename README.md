@@ -46,6 +46,10 @@ vault policy write tfc-policy tfc-policy.hcl
 
 # Create a JWT role in Vault for TFC
 vault write auth/jwt/role/tfc-role @vault-jwt-auth-role.json
+
+# Create a KV secret to use later
+vault secrets enable -path=secret -version=2 kv
+vault kv put -mount=kv secret name=hello bar=world
 ```
 
 ## Terraform Cloud Configuration
