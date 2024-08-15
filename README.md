@@ -1,6 +1,6 @@
 # Vault-TFC-JWT-Dynamic-Example
 
-This example demonstrates how to test dynamic credentials with Terraform Cloud (TFC) and HashiCorp Vault using JWT authentication. We’ll follow the steps outlined in this [guide](https://developer.hashicorp.com/terraform/cloud-docs/workspaces/dynamic-provider-credentials/vault-configuration).
+This example demonstrates how to test dynamic credentials with Terraform Cloud (TFC) and HashiCorp Vault using JWT authentication. We’ll follow the steps outlined in this [guide](https://developer.hashicorp.com/terraform/cloud-docs/workspaces/dynamic-provider-credentials/vault-configuration). We create a policy in Vault allowing TF access to secret/*. Next we create a kv secret called secret/s3 with the value name=tylers-bucket, we will create bucket with by getting this secret. 
 
 ## HCP Vault Setup
 
@@ -49,7 +49,7 @@ vault write auth/jwt/role/tfc-role @vault-jwt-auth-role.json
 
 # Create a KV secret to use later
 vault secrets enable -path=secret -version=2 kv
-vault kv put -mount=kv secret name=hello bar=world
+vault kv put -mount=secret s3 name=tylers-bucket region=us-west-2
 ```
 
 ## Terraform Cloud Configuration

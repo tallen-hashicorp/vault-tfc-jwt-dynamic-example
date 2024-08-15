@@ -40,6 +40,21 @@ variable "tfc_vault_dynamic_credentials" {
   })
 }
 
+resource "random_string" "s3_bucket_name_prefix" {
+  length  = 8
+  special = false
+  upper   = false
+}
+
+data "vault_kv_secret_v2" "s3_config" {
+  mount = "secret"
+  name  = "s3"
+}
+
+resource "aws_s3_bucket" "example" {
+  bucket = data.vault_kv_secret_v2.s3_config.data["name"]
+}
+
 output "tfc_vault_dynamic_credentials" {
   description = "Object containing Vault dynamic credentials configuration"
   value       = var.tfc_vault_dynamic_credentials
