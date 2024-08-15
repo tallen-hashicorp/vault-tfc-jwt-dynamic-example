@@ -56,7 +56,7 @@ data "vault_kv_secret_v2" "s3_config" {
 }
 
 resource "aws_s3_bucket" "example" {
-  bucket = data.vault_kv_secret_v2.s3_config.data["name"]
+  bucket = "${random_string.s3_bucket_name_prefix.result}-${data.vault_kv_secret_v2.s3_config.data["name"]}"
 }
 
 output "tfc_vault_dynamic_credentials" {
